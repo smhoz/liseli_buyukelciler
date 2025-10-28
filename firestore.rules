@@ -1,0 +1,177 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /userStories/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if resource.data.user == /databases/$(database)/documents/users/$(request.auth.uid);
+      allow delete: if false;
+    }
+
+    match /dogs/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /userPosts/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if resource.data.postUser == /databases/$(database)/documents/users/$(request.auth.uid);
+    }
+
+    match /postComments/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if resource.data.user == /databases/$(database)/documents/users/$(request.auth.uid);
+      allow delete: if false;
+    }
+
+    // match /users/{document} {
+    //  allow create: if request.auth.uid == document;
+    //  allow read: if true;
+    //  allow write: if request.auth.uid == document;
+    //  allow delete: if request.auth.uid == document;
+    //}
+    
+    match /users/{document} {
+      allow read, write, delete, create: if true;
+    }
+
+    match /chats/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow update: if request.auth != null;
+      allow write: if request.auth != null && (
+        /databases/$(database)/documents/users/$(request.auth.uid) in resource.data.users
+      );
+      // Allow deleting own chats OR system chats (is_system_chat = true)
+      allow delete: if request.auth != null && (
+        resource.data.user_a == /databases/$(database)/documents/users/$(request.auth.uid) ||
+        resource.data.is_system_chat == true
+      );
+    }
+
+    match /storyComments/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if resource.data.commentUser == /databases/$(database)/documents/users/$(request.auth.uid);
+      allow delete: if resource.data.commentUser == /databases/$(database)/documents/users/$(request.auth.uid);
+    }
+
+    match /chat_messages/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow write: if request.auth != null && (
+        resource.data.user == /databases/$(database)/documents/users/$(request.auth.uid)
+      );
+      // Allow deleting own messages OR system messages (is_system_message = true)
+      allow delete: if request.auth != null && (
+        resource.data.user == /databases/$(database)/documents/users/$(request.auth.uid) ||
+        resource.data.is_system_message == true
+      );
+    }
+
+    match /friends/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+    
+    match /events/{document} {
+      allow read: if true; // sadece okuma izni veriyoruz
+      allow create, update, delete: if request.auth != null; // sadece oturum açmış kullanıcılar
+    }
+    
+    match /event_user/{document}{
+      allow read: if true; // sadece okuma izni veriyoruz
+      allow create, update, delete: if request.auth != null; // sadece oturum açmış kullanıcılar
+    }
+    
+    match /education_information/{document}{
+      allow read: if true; // sadece okuma izni veriyoruz
+      allow create, update, delete: if request.auth != null; // sadece oturum açmış kullanıcılar
+    }
+    
+    match /education_year_change/{document}{
+      allow read: if true; // sadece okuma izni veriyoruz
+      allow create, update, delete: if request.auth != null; // sadece oturum açmış kullanıcılar
+    }
+    
+    match /working_life/{document}{
+      allow read: if true; // sadece okuma izni veriyoruz
+      allow create, update, delete: if request.auth != null; // sadece oturum açmış kullanıcılar
+    }
+    
+    // test
+    match /test/{document}{
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+    
+    // event_category
+    match /event_category/{document}{
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+    
+    match /state/{document}{
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+    
+    // 
+    match /activity_category/{document}{
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+    
+    // 
+    match /activity/{document}{
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+    
+    // 
+    match /school/{document}{
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /badge/{document}{
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /reportPosts/{document}{
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    // Catch-all rule - MUST BE LAST!
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+

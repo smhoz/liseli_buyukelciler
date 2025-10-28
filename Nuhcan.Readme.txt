@@ -1,0 +1,28 @@
+MailerSender:
+mlsn.d153cdd6163507a2611cdb5857c3b95135dff2ce3192d47632a0d3741827c3db
+
+Flutter Versiyon:
+Flutter 3.29.0 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 35c388afb5 (4 months ago) • 2025-02-10 12:48:41 -0800
+Engine • revision f73bfc4522
+Tools • Dart 3.7.0 • DevTools 2.42.2
+
+JDK Java Version: 
+java 17.0.6 2023-01-17 LTS
+Java(TM) SE Runtime Environment (build 17.0.6+9-LTS-190)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.6+9-LTS-190, mixed mode, sharing)
+
+VS Code Eklentiler
+- Flutter
+- Dart
+
+Projeleri Başlatırken: 
+dart pub global activate fvm
+flutter clean
+flutter pub get
+
+Android:
+flutter build appbundle
+
+İOS: 
+flutter build ipa --release

@@ -1,0 +1,21 @@
+{
+  "SYSTEM_USER": {
+    "uid": "SYSTEM_USER",
+    "display_name": "Liseli Büyükelçiler",
+    "email": "buyukelcilerliseli@gmail.com",
+    "photo_url": "https://firebasestorage.googleapis.com/v0/b/liseli-buyukelciler-db.appspot.com/o/app_icon.png?alt=media",
+    "phone_number": "",
+    "created_time": {
+      "__datatype__": "timestamp",
+      "value": {
+        "_seconds": 1700000000,
+        "_nanoseconds": 0
+      }
+    },
+    "badges": [],
+    "fcm_token": "",
+    "is_system_user": true,
+    "bio": "Resmi sistem hesabı - Duyurular ve bildirimler için kullanılır"
+  }
+}
+

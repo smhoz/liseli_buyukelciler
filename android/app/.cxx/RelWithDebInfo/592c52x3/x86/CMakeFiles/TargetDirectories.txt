@@ -1,0 +1,2 @@
+C:/Users/CASPER/StudioProjects/flutter/3.29.0/freelancer projects/sosyal_medya/android/app/.cxx/RelWithDebInfo/592c52x3/x86/CMakeFiles/edit_cache.dir
+C:/Users/CASPER/StudioProjects/flutter/3.29.0/freelancer projects/sosyal_medya/android/app/.cxx/RelWithDebInfo/592c52x3/x86/CMakeFiles/rebuild_cache.dir

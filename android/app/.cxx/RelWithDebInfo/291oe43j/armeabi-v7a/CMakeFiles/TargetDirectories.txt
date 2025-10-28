@@ -1,0 +1,2 @@
+C:/Users/CASPER/Downloads/sosyal_medya/sosyal_medya/android/app/.cxx/RelWithDebInfo/291oe43j/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/CASPER/Downloads/sosyal_medya/sosyal_medya/android/app/.cxx/RelWithDebInfo/291oe43j/armeabi-v7a/CMakeFiles/rebuild_cache.dir

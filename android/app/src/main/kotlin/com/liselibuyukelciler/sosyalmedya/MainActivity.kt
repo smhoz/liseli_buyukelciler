@@ -1,0 +1,6 @@
+package com.liselibuyukelciler.sosyalmedya
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}

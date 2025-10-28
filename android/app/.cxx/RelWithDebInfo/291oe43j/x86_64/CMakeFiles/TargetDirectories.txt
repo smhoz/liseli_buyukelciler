@@ -1,0 +1,2 @@
+C:/Users/CASPER/Downloads/sosyal_medya/sosyal_medya/android/app/.cxx/RelWithDebInfo/291oe43j/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/CASPER/Downloads/sosyal_medya/sosyal_medya/android/app/.cxx/RelWithDebInfo/291oe43j/x86_64/CMakeFiles/rebuild_cache.dir
